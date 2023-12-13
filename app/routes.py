@@ -1,7 +1,21 @@
 from app import app
 from app.controller import AlertController, BusController
 from flask import request, jsonify
+from datetime import datetime
 
+
+
+# @socketio.on('connect')
+# def connect():
+#     print('Client connected')
+
+# @socketio.on('disconnect')
+# def disconnect():
+#     print('Client disconnected')
+    
+def get_current_datetime():
+    now = datetime.now()
+    return now.strftime("%m/%d/%Y %H:%M:%S")
 
 @app.route("/")
 def index():
